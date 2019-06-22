@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+
+img.wp-smiley,
+img.emoji {
+    display: inline !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 1em !important;
+    width: 1em !important;
+    margin: 0 .07em !important;
+    vertical-align: -0.1em !important;
+    background: none !important;
+    padding: 0 !important;
+}
+
+body.custom-background {
+    background-color: #1e73be;
+}
+
+.custom-error-message,
+.error-message {
+    color: red;
+}
+
+input:disabled,
+option:disabled,
+select:disabled {
+    background-color: #eee !important;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.request-type .custom-error-message {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form-group .addFileAction {
+    font-weight: bold;
+    color: #00a651;
+    cursor: pointer;
+}
+
+.form-group ul {
+    margin: 0;
+    padding: 0;
+}
+
+.form-group ul li {
+    border-top: solid #ddd 1px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.form-group ul li:first-child {
+    border-top: 0;
+}
+
+.form-group ul li .removeDocfile,
+.form-group ul li .removeDocfileRep,
+.form-group ul li .removeDocAditional {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    font-weight: bold;
+    text-transform: lowercase;
+    ;
+    color: red;
+    cursor: pointer;
+}
+
+.hr {
+    margin: 30px 0;
+    border-bottom: solid 1px #ddd;
+}
+
+#mensaje-success .message__inner {
+    text-align: center;
+    border: solid 1px green;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: green;
+    background: white;
+}

@@ -1,0 +1,862 @@
+body {
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #000;
+}
+
+h2 {
+    font-size: 20px;
+    margin: .83em 0
+}
+
+h2.headertekst {
+    text-align: center;
+}
+
+
+/*          Top Section with form                     */
+
+
+/* css */
+
+#logo {
+    background: transparent url("../img/logo.png") no-repeat scroll 0% 0%;
+    width: 250px;
+    height: 70px;
+    text-indent: -3333px;
+    border: 0;
+    margin: 0 auto;
+}
+
+#logo a {
+    display: block;
+    width: 280px;
+    /* larger than actual image? */
+    height: 120px;
+    text-decoration: none;
+    border: 0;
+}
+
+.form-type {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1920px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/*.form-type .top{
+    background: url('img/top-background.jpg') top no-repeat;
+    color: #fff;
+    padding-bottom: 104px;
+    z-index: 0;
+    -webkit-background-size:cover;
+    background-size: cover;
+}*/
+
+.form-type .top .logo {
+    margin-top: 32px;
+}
+
+.form-type .top .logo img {
+    width: 56px;
+    height: 40px;
+}
+
+.form-type .top .top-description {
+    margin-top: 27px;
+    width: 100%;
+    height: auto;
+}
+
+.form-type .top .top-description h1 {
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1.17;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.form-type .top .top-description h2 {
+    font-size: 18px;
+    line-height: 1.56;
+    margin-top: 11px;
+    margin-bottom: 33px;
+    font-weight: 400;
+}
+
+.form-type .top .top-description .no-padding-left {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.form-type .form {
+    padding: 29px 54px 23px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: rgba(8, 27, 35, 0.6);
+    margin-top: 7px;
+}
+
+.form-type .form p {
+    font-size: 28px;
+    font-weight: 300;
+    color: #ececec;
+    margin-bottom: 15px;
+}
+
+.form-type .form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 17px;
+}
+
+.form-type label {
+    font-weight: 300;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 4px!important;
+    padding-top: 3px!important;
+    padding: 0 0 0 0 !important;
+    font-weight: bold !important;
+}
+
+.form-horizontal .control-label {
+    text-align: left!important;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+.form-type .form-control {
+    height: 36px;
+    border: 1px solid #a19e9e;
+    background: transparent;
+    border-radius: 3px;
+    color: #000;
+    text-indent: 5px;
+}
+
+.form-type button {
+    background-color: #2fab34;
+    width: 100%;
+    text-transform: uppercase;
+    border: 1px solid #2fab34;
+    height: 48px;
+    font-size: 15px;
+    margin-top: 8px;
+    transition: background-color 0.5s ease;
+    margin-bottom: 3px;
+}
+
+.form-type button:hover,
+.form-type button:active,
+.form-type button:visited,
+.form-type button:focus,
+.btn-success:active:hover,
+.btn-success:active:focus {
+    background-color: #2fab34;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-type p.new-login {
+    font-size: 14px!Important;
+    text-align: center;
+}
+
+.form-type p.new-login a {
+    color: #2fab34;
+}
+
+.form-type p.new-login a:hover,
+.form-type p.new-login a:active,
+.form-type p.new-login a:focus,
+.form-type p.new-login a:visited {
+    text-decoration: none;
+}
+
+.form-type .logged {
+    height: auto;
+    width: inherit;
+    margin: 38px 0 55px 0;
+}
+
+.form-type .logged img {
+    width: 95px;
+    height: 108px;
+    margin-left: 6px;
+}
+
+.form-type .logged h5 {
+    font-size: 28px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-left: 6px;
+    margin-top: 26px;
+}
+
+.form-type .logged a {
+    width: 100%;
+    display: inline-block;
+    background-color: #2fab34;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-weight: 300;
+    padding: 13px 0;
+    margin-top: 26px;
+}
+
+.form-type .logged a:hover,
+.form-type .logged a:active,
+.form-type .logged a:focus,
+.form-type .logged a:visited {
+    text-decoration: none;
+}
+
+
+/*                      Section with Embedded Form               */
+
+.form-type .form-embedded {
+    background: url('../img/pattern.jpg') repeat-x;
+    padding-top: 80px;
+}
+
+.form-type .form-embedded h3 {
+    font-size: 60px;
+    line-height: 0.8;
+    color: #000;
+    text-align: center;
+    font-weight: 300;
+    padding-bottom: 43px;
+}
+
+.form-type .form-embedded .container-embedded {
+    background-color: #fff;
+    overflow: auto;
+    height: auto;
+    border: 1px solid #ececec;
+}
+
+.form-type .form-embedded .container-embedded .embedded {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+
+/*                     Section with slider                      */
+
+.form-type .features {
+    padding: 90px 0 141px 0;
+}
+
+.form-type .features .f_right {
+    float: right;
+}
+
+.form-type .features .feature-image {
+    margin-top: 16px;
+}
+
+.form-type .features h4 {
+    font-size: 36px;
+    margin-bottom: 48px;
+}
+
+.form-type .features .feature {
+    font-size: 14px;
+    color: #4c4c4c;
+    cursor: pointer;
+    z-index: 10;
+    margin-bottom: 20px;
+    margin-right: 3%;
+    display: block;
+}
+
+.form-type .features img {
+    box-shadow: 0px 10px 15px 2px #e8e8e8;
+    max-width: 750px;
+}
+
+.form-type .features .feature .title {
+    text-transform: uppercase;
+    margin-left: 18px;
+    font-weight: 600;
+}
+
+.form-type .features .slider-desktop {
+    position: relative;
+}
+
+.form-type .features .slide {
+    z-index: 0;
+    transition: .2s ease-in-out;
+    filter: none;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius='0');
+}
+
+.form-type .features .slide.smallFade {
+    position: absolute;
+    z-index: -1;
+    top: 16px;
+    filter: none;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius='0');
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .form-type .features .slide {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+.form-type .features .feature .i123-check {
+    float: left;
+}
+
+.form-type .features .feature p {
+    line-height: 1.71;
+    margin-left: 43px;
+    padding-right: 5px;
+}
+
+.form-type .features .feature.active span {
+    color: #2fab34;
+}
+
+.form-type .features #text-mobile {
+    text-align: center;
+}
+
+.form-type .features .mobile-div {
+    width: 100%;
+}
+
+
+/*                   Carousel on mobile                 */
+
+.form-type .slider-mobile {
+    display: none;
+}
+
+
+/*                    Left picture section - right zone of interest - DC FIRE         */
+
+.form-type .grey {
+    background-color: #ececec;
+}
+
+.form-type .left-picture-testimonial .left-picture-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-type .left-picture-testimonial .left-picture-section .container-fluid {
+    max-width: 1170px;
+}
+
+.form-type .left-picture-testimonial .left-image {
+    height: 450px;
+}
+
+.form-type .left-picture-testimonial .left-image img {
+    position: absolute;
+    right: 15px;
+}
+
+.form-type .left-picture-testimonial .left-picture-section .desc {
+    margin-top: 125px;
+}
+
+.form-type .left-picture-testimonial .left-picture-section .desc h5 {
+    font-size: 24px;
+    line-height: 1.58;
+    color: #4c4c4c;
+}
+
+.form-type .left-picture-testimonial .left-picture-section .desc .line {
+    width: 25.5%;
+    height: 4px;
+    background-color: #2fab34;
+    margin: 28px 0 25px 0;
+}
+
+.form-type .left-picture-testimonial .left-picture-section .desc p {
+    color: #4c4c4c;
+    font-size: 18px;
+}
+
+
+/*iframe{
+    display: none;
+} */
+
+
+/*              Button Section             */
+
+.form-type .button-section {
+    margin: 82px 0 100px 0;
+}
+
+.form-type .button-section .desc {
+    max-width: 480px;
+    text-align: center;
+    display: block;
+    margin: 0 auto 26px auto;
+}
+
+.form-type .button-section .desc h6 {
+    font-size: 24px;
+    line-height: 1.42;
+    color: #4c4c4c;
+}
+
+.form-type .button-section .button {
+    display: block;
+    margin: 0 auto;
+    background-color: #f4811f;
+    max-width: 360px;
+    height: 48px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.form-type .button-section .button a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    line-height: 48px;
+    transition: background-color 0.5s ease;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.form-type .button-section .button a:hover,
+.form-type .button-section .button a:focus,
+.form-type .button-section .button a:active,
+.form-type .button-section .button a:visited {
+    text-decoration: none;
+    border-radius: 3px;
+    background-color: #1BA8CE;
+}
+
+
+/*              Footer                  */
+
+footer {
+    background-color: #2fab34;
+    color: #000000;
+    font-size: 14px;
+    padding: 30px 0 19px 0;
+}
+
+footer img {
+    margin-left: 35px;
+    float: left;
+    margin-right: 10px;
+}
+
+footer .copyright p {
+    float: right;
+}
+
+footer .copyright p a {
+    color: #fff;
+    font-weight: bold;
+}
+
+footer .copyright p a:hover,
+footer .copyright p a:active,
+footer .copyright p a:visited,
+footer .copyright p a:focus {
+    text-decoration: none;
+}
+
+
+/*              Media Queries            */
+
+@media only screen and (max-width: 1199px) {
+    .form-type .top .logo {
+        margin-top: 27px;
+    }
+    .form-type .top {
+        padding-bottom: 60px;
+    }
+    .form-type .top .top-description {
+        margin-top: 37px;
+    }
+    .form-type .top .top-description h1 {
+        font-size: 60px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        margin-top: 18px;
+    }
+    .form-type .top .top-description h2 {
+        line-height: 1.56;
+        margin-top: 16px;
+        margin-bottom: 19px;
+    }
+    .form-type .form {
+        margin-top: 24px;
+        padding: 30px 53px 23px;
+    }
+    .form-type .form p {
+        font-size: 28px;
+    }
+    .form-type .form-embedded h3 {
+        padding-bottom: 39px;
+    }
+    .form-type .features {
+        padding: 133px 0 105px;
+    }
+    .form-type .features h4 {
+        margin-bottom: 27px;
+    }
+    .form-type .features .features-list {
+        margin: 55px auto 0 auto;
+        height: auto;
+    }
+    .form-type .features .mobile-div {
+        width: 45%;
+    }
+    .form-type .features .feature {
+        margin-right: 0;
+    }
+    .form-type .features .feature-image {
+        display: inline-block;
+    }
+    .form-type .features .feature-image img {
+        margin: 0 auto;
+    }
+    .form-type .features h4#text-mobile {
+        margin-bottom: 22px;
+    }
+    .form-type .features .slide.smallFade {
+        left: 108px;
+    }
+    .form-type .left-picture-testimonial .left-picture-section .desc {
+        margin-top: 96px;
+        margin-right: 50px;
+    }
+    .form-type .left-picture-testimonial .left-picture-section .desc .line {
+        margin: 21px 0 15px 0;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .form-type .top .logo {
+        text-align: center;
+    }
+    .form-type .top {
+        background-size: cover;
+        background-position: bottom center;
+        padding-bottom: 84px;
+    }
+    .form-type .top .top-description {
+        margin-top: 41px;
+    }
+    .form-type .top .top-description img {
+        display: none;
+    }
+    .form-type .top .top-description h1 {
+        text-align: center;
+        margin-bottom: 60px;
+        margin-top: 16px;
+        font-size: 40px;
+    }
+    .form-type .top .top-description h2 {
+        line-height: 1.75;
+        margin-top: 15px;
+    }
+    .form-type .left-picture-testimonial .left-picture-section .desc h5 {
+        font-size: 18px;
+    }
+    .form-type .features img {
+        max-width: 99%;
+        display: block;
+        margin: 0 auto;
+    }
+    .form-type .form {
+        margin-top: 44px;
+        padding: 30px 59px 20px;
+    }
+    .form-type .form-embedded {
+        padding-top: 90px;
+    }
+    .form-type .features .slide.smallFade {
+        left: 16px;
+        width: 95%;
+    }
+    .form-type .form-embedded h3 {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+    .form-type .features {
+        padding: 83px 0 105px;
+    }
+    .form-type .features h4#text-mobile {
+        margin-bottom: 40px;
+    }
+    .form-type .features .features-list {
+        width: 100%;
+    }
+    .form-type .features .mobile-div {
+        width: 50%;
+    }
+    .form-type .left-picture-testimonial .left-picture-section .desc {
+        margin-right: 0;
+    }
+    .form-type footer {
+        text-align: center;
+    }
+    .form-type footer .copyright p {
+        float: none;
+    }
+    .col-centered {
+        float: none;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 978px) {
+    footer {
+        background-color: #2fab34;
+        color: #000000;
+        font-size: 14px;
+        padding: 30px 0 19px 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .form-type .features {
+        padding: 42px 0 50px;
+    }
+    .form-type .slider-mobile {
+        display: block;
+    }
+    .form-type .slider-desktop {
+        display: none;
+    }
+    .form-type .top .top-description {
+        margin-top: 56px;
+    }
+    .form-type .left-picture-testimonial .left-image {
+        display: none;
+    }
+    .form-type .carousel-caption {
+        position: relative;
+        text-shadow: none;
+        right: 0;
+        left: 0;
+        color: #4c4c4c;
+        display: block;
+        padding-top: 28px;
+    }
+    .form-type .top .top-description h1 {
+        font-size: 40px;
+    }
+    .form-type .carousel-caption .title {
+        text-transform: uppercase;
+        font-weight: 600;
+        vertical-align: super;
+    }
+    .form-type .carousel-caption p {
+        line-height: 1.71;
+        margin-top: 3px;
+    }
+    .form-type .carousel-inner .item.active>.carousel-caption span {
+        color: #2fab34;
+    }
+    .form-type .carousel-indicators {
+        bottom: -15px;
+    }
+    .form-type .carousel-indicators li {
+        width: 14px;
+        height: 14px;
+        background-color: #ececec;
+        margin: 0 13px 0 0;
+        border: none;
+    }
+    .form-type .carousel-indicators li:last-child {
+        margin: 0;
+    }
+    .form-type .carousel-indicators .active {
+        background-color: #2fab34;
+    }
+    .form-type .form {
+        display: block;
+        margin: 25px auto 0 auto;
+    }
+    .form-type .form-embedded {
+        padding-top: 72px;
+    }
+    .form-type .form-embedded .container-embedded {
+        margin-top: 23px;
+    }
+    .form-type .logged {
+        text-align: center;
+    }
+    .form-type .logged img {
+        display: block;
+        margin: 0 auto;
+    }
+    .form-type .top {
+        padding-bottom: 45px;
+    }
+    .form-type .features .features-list {
+        display: none;
+    }
+    .form-type .left-picture-testimonial .left-picture-section .desc {
+        text-align: center;
+        padding-bottom: 91px;
+    }
+    .form-type .left-picture-testimonial .left-picture-section .desc .line {
+        margin: 21px auto 15px auto;
+    }
+    footer img {
+        float: none;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .free-form-builder .button-section {
+        margin: 40px 0 59px 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .form-type .form {
+        margin: 45px auto 0 auto;
+    }
+    .form-type .button-section {
+        margin: 50px 0 57px 0px;
+    }
+    .form-type .features h4#text-mobile {
+        margin-bottom: 35px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .form-type .form {
+        padding: 30px 15px 20px;
+    }
+    .form-type .button-section .desc h6 {
+        font-size: 20px;
+    }
+    .form-type .button-section .button {
+        width: 300px;
+    }
+    .form-type h3 {
+        font-size: 25px;
+    }
+}
+
+.center-arrow img {
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block !important;
+}
+
+@media (min-width: 992px) {
+    .center-arrow img {
+        margin-top: 50px;
+    }
+}
+
+
+/* Animate CSS */
+
+@-moz-keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -moz-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+@-webkit-keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+    60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+.bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}

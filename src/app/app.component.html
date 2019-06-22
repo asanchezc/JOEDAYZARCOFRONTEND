@@ -1,0 +1,295 @@
+<div class="form-type">
+    <section class="form-embedded">
+        <form #formArco="ngForm" class="form-horizontal request-form" (ngSubmit)="onSubmit()" novalidate>
+
+            <div class="container">
+                <div class="row">
+                    <!-- mensaje de respuesta-->
+                    <div id="mensaje-success"></div>
+                    <!-- fin de mensaje-->
+                    <div class="col-lg-8 col-md-8 col-md-8 col-sm-8">
+                        <h2 class="headertekst"><strong>FORMATO DE SOLICITUD DE DERECHOS ARCO</strong></h2>
+                        <p style="font-size: 18px; text-align: center;">Acceso, Rectificación, Cancelación y Oposición de Datos Personales</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-md-4 col-sm-4">
+                        <div id="logo">
+                            <a href="https://www.inkafarma.com.pe/" target="_blank">inkafarma</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="container-embedded">
+                            <div class="embedded col-lg-offset-1 col-lg-10 ">
+
+                                <div class="form-group">
+                                    <p align="justify">ECKERD PERU S.A, identificada con R.U.C. No. 20512002090, en cumplimiento de lo dispuesto por la Ley No. 29733, Ley de Protección de Datos Personales, y su Reglamento, aprobado por Decreto Supremo No. 003-2013-JUS,
+                                        pone a su disposición un procedimiento para el ejercicio de los derechos de Acceso, Rectificación, Cancelación y Oposición respecto de sus datos personales contenidos en los bancos de datos de nuestra titularidad.
+                                        A fin de atender adecuadamente su solicitud, le pedimos que nos proporcione la siguiente información:</p>
+                                </div>
+                                <div class="form__section">
+                                    <div class="form-group">
+                                        <h4>DATOS DEL TITULAR DE LOS DATOS PERSONALES</h4>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                            <label class="control-label col-sm-4">Nombres</label>
+                                            <div>
+                                                <input class="form-control" [(ngModel)]="titular.nombres" (keyup)="onKeyInputNombres()" type="text" name="nombres" #nombres="ngModel" required/>
+                                                <small *ngIf="validTitular.nombres || nombres.touched && !nombres.valid" class="error-message"> Por favor ingrese un Nombre válido</small>
+                                            </div>
+                                        </div>
+                                        <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                            <label class="control-label col-sm-4">Apellidos</label>
+                                            <div>
+                                                <input class="form-control" [(ngModel)]="titular.apellidos" #lastname="ngModel" type="text" name="lastname" id="lastname" required />
+                                                <small *ngIf="validTitular.apellidos || lastname.touched && !lastname.valid" class="error-message"> Por favor ingrese un Apellido válido</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                    <label class="control-label col-sm-12">Tipo de documento</label>
+                                                    <div>
+                                                        <select class="form-control" #type_doc="ngModel" [(ngModel)]="titular.tipdoc" name="type_doc" id="type_doc" data-target=".request-form__titular__doc-number">
+																		<option value="">Seleccione ...</option>
+																		<option value="DNI">D.N.I.</option>
+																		<option value="CE">C.E.</option>
+                                                                    </select>
+                                                        <small *ngIf="validTitular.tipdoc || type_doc.touched && type_doc.value=='' " class="error-message"> Por favor seleccione un tipo de documento</small>
+                                                    </div>
+                                                </div>
+                                                <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                    <label class="control-label col-sm-12">N. Documento</label>
+                                                    <div>
+                                                        <input class="form-control" #number_doc="ngModel" [(ngModel)]="titular.numdoc" type="text" name="number_doc" id="number_doc" data-target="request-form__titular__doc-type" required/>
+                                                    </div>
+                                                    <small *ngIf="validTitular.numdoc || number_doc.touched && !number_doc.valid" class="error-message"> Por favor ingrese un N. Documento válido</small>
+                                                </div>
+                                            </div>
+                                            <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                <label class="control-label col-sm-12">Adjuntar Documento</label>
+                                                <div>
+                                                    <input type="file" class="docfile" name="docfile[]" (change)="adjuntarDoc($event)" />
+                                                </div>
+                                                <small style="margin:0 0 0 0;font-style:Italic;">* Peso máximo (2MB) en formato (jpg, png, pdf) </small>
+                                                <br><small *ngIf="validTitular.archivoAdjunto" [innerHTML]="msgvalidfiletitu" class="error-message"></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                            <label class="control-label col-sm-4">Email</label>
+                                            <div>
+                                                <input class="form-control " #email="ngModel" [(ngModel)]="titular.email" type="text" name="email" id="email" required/>
+                                            </div>
+                                            <small *ngIf="validTitular.email || email.touched && !email.valid" class="error-message"> Por favor ingrese un N. Documento válido</small>
+                                        </div>
+                                        <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                            <label class="control-label col-sm-4">Domicilio</label>
+                                            <div>
+                                                <input class="form-control" #address="ngModel" [(ngModel)]="titular.domicilio" type="text" name="address" id="address" required/>
+                                            </div>
+                                            <small *ngIf="validTitular.domicilio || address.touched && !address.valid" class="error-message"> Por favor ingrese un N. Documento válido</small>
+                                        </div>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                <div class="subitem col-lg-8 col-md-6 col-sm-8">
+                                                    <label class="control-label cols-sm-8">¿Es un representante legal?  </label>
+                                                    <input class="form-control" [(ngModel)]="checkedRepre" (change)="activeRepresen()" type="checkbox" value="SI" name="is_legal" />
+                                                </div>
+                                                <div class="col-sm-2 checkbox">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <h4>DATOS DEL REPRESENTANTE DEL TITULAR DE LOS DATOS PERSONALES (de ser el caso)</h4>
+                                    <label class="control-label cols-sm-12">El presente formulario deberá ser contestado únicamente por el representante legal del titular</label>
+
+                                </div>
+                                <div class="representative">
+                                    <div class="representative__inner">
+                                        <div class="form-group">
+                                            <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                <label class="control-label col-sm-4">Nombres</label>
+                                                <div>
+                                                    <input class="form-control" [disabled]="!activeRepre" #nombrepre="ngModel" [(ngModel)]="repre.nombres" type="text" name="name_rep" id="name_rep" required/>
+                                                </div>
+                                                <small *ngIf="validRepresentante.nombres || nombrepre.touched && !nombrepre.valid" class="error-message"> Por favor ingrese un nombre válido</small>
+                                            </div>
+                                            <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                <label class="control-label col-sm-4">Apellidos</label>
+                                                <div>
+                                                    <input class="form-control" [disabled]="!activeRepre" #apellidospre="ngModel" [(ngModel)]="repre.apellidos" type="text" name="lastname_rep" id="lastname_rep" required/>
+                                                </div>
+                                                <small *ngIf="validRepresentante.apellidos || apellidospre.touched && !apellidospre.valid" class="error-message"> Por favor ingrese un apellido válido</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                    <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                        <label class="control-label col-sm-12">Tipo de documento</label>
+                                                        <div>
+                                                            <select class="form-control" [disabled]="!activeRepre" #tipdocpre="ngModel" [(ngModel)]="repre.tipdoc" name="type_doc_rep" id="type_doc_rep" data-target=".request-form__representative__documentNumber" disabled>
+																			<option value="">Seleccione ...</option>
+																			<option value="DNI">D.N.I.</option>
+																			<option value="CE">C.E.</option>
+																		</select>
+                                                        </div>
+                                                        <small *ngIf="validRepresentante.tipdoc || tipdocpre.touched && tipdocpre.value=='' " class="error-message"> Por favor seleccione un tipo de documento</small>
+                                                    </div>
+                                                    <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                        <label class="control-label col-sm-12">N. Documento</label>
+                                                        <div>
+                                                            <input class="form-control" [disabled]="!activeRepre" #numdocpre="ngModel" [(ngModel)]="repre.numdoc" type="text" maxlength="8" name="number_doc_rep" id="number_doc_rep" data-target=".request-form__representative__documentType" required/>
+                                                        </div>
+                                                        <small *ngIf="validRepresentante.numdoc || numdocpre.touched && !numdocpre.valid" class="error-message"> Por favor ingrese un N. Documento válido</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                <label class="control-label col-sm-12">Adjuntar Documento</label>
+                                                <div>
+                                                    <input type="file" name="docfilerep[]" [disabled]="!activeRepre" class="request-form__representative__field docfilerep" (change)="adjuntarDocRepre($event)" disabled/>
+                                                </div>
+                                                <small style="margin:0 0 0 0;font-style:Italic;">* Peso máximo (2MB) en formato (jpg, png, pdf) </small>
+                                                <br><small *ngIf="validRepresentante.archivoAdjunto" [innerHTML]="msgvalidfilereprearchivo" class="error-message"></small>
+                                            </div>
+
+                                            <div class="subitem col-lg-6 col-md-6 col-sm-6">
+                                                <label class="control-label col-sm-12">Documento que acredite representación</label>
+                                                <div>
+                                                    <input type="file" name="docfilerep_acred[]" [disabled]="!activeRepre" class="docfilerep_acred request-form__representative__field" (change)="adjuntarDocAcrediteRepre($event)" disabled/>
+                                                </div>
+                                                <small style="margin:0 0 0 0;font-style:Italic;">* Peso máximo (2MB) en formato (jpg, png, pdf) </small>
+                                                <br><small *ngIf="validRepresentante.archivoAcrediteAdjunto" [innerHTML]="msgvalidfilerepreacredite" class="error-message"></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hr"></div>
+                                <div id="requestType">
+                                    <div class="form-group">
+                                        <h4 class="request-type__title">Seleccione el tipo de solicitud que desea ingresar</h4>
+                                        <small *ngIf="validTitular.tipoSolicitud" class="custom-error-message">Seleccione un tipo de solicitud</small>
+                                    </div>
+
+                                    <div class="request-type">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">ACCESO</label>
+                                            <div class="col-sm-6">
+                                                Acción destinada a obtener, de la Empresa, la información sobre uno mismo almacenada en el banco de datos, así como aquella referida a las condiciones y generalidades del tratamiento de dicha información. </div>
+                                            <div class="col-sm-3">
+                                                <input class="form-control" type="radio" name="tipo_solicitud" [(ngModel)]="titular.tipoSolicitud" (change)="pressTipoSolicitud()" id="tipo_solicitud" value="ACCESO" checked="checked" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">RECTIFICACIÓN</label>
+                                            <div class="col-sm-6">
+                                                Acción destinada a: (i) actualizar sus datos; (ii) corregir aquella información que resulte ser inexacta, errónea o falsa; y/o (iii) incluir información en el banco de datos. En todos los casos deberá adjuntar la información que sustente la procedencia
+                                                de la rectificación. </div>
+                                            <div class="col-sm-3">
+                                                <input class="form-control" type="radio" name="tipo_solicitud" [(ngModel)]="titular.tipoSolicitud" (change)="pressTipoSolicitud()" id="tipo_solicitud" value="RECTIFICACION" required/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">CANCELACIÓN</label>
+                                            <div class="col-sm-6">
+                                                Acción de supresión de información personal almacenada en un banco de datos en razón a que esta ya no es necesaria o pertinente para la finalidad para la cual fue recopilada, cuando hubiere vencido el plazo para su tratamiento o cuando haya revocado el
+                                                consentimiento otorgado. </div>
+                                            <div class="col-sm-3">
+                                                <input class="form-control" type="radio" name="tipo_solicitud" [(ngModel)]="titular.tipoSolicitud" (change)="pressTipoSolicitud()" id="tipo_solicitud" value="CANCELACION" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3">OPOSICIÓN</label>
+                                            <div class="col-sm-6">
+                                                Acción de impedir el tratamiento de datos personales o cese del mismo, cuando el titular no hubiere prestado su consentimiento o cuando acredite que medien motivos fundados y legítimos relativos a una concreta situación personal que lo justifiquen. </div>
+                                            <div class="col-sm-3">
+                                                <input class="form-control" type="radio" [(ngModel)]="titular.tipoSolicitud" name="tipo_solicitud" (change)="pressTipoSolicitud()" id="tipo_solicitud" value="OPOSICION" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-12">Exponga de forma clara y precisa en el espacio en blanco los alcances de su solicitud, señalando la información a la que desea acceder, rectificar, cancelar o respecto de la cual desea formular oposición:</label>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="descrip_exponga" [(ngModel)]="adicionales.textArea" id="descrip_exponga"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-12">Si cuenta con información adicional y/o documentos que faciliten la localización de los datos personales relacionados con la presente solicitud, por favor adjuntar copia de estos.</label>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div>
+                                            <input type="file" name="docAditional[]" class="docAditional" (change)="adjuntarDocAdicional($event)"/>
+                                        </div>
+                                        <small style="margin:0 0 0 0;font-style:Italic;">* Peso máximo (2MB) en formato (jpg, png, pdf) </small>
+                                        <br><small *ngIf="validArchivoAdicional" [innerHTML]="msgValidArchivoAdicional" class="error-message"></small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <p><strong>NOTIFICACIÓN DE LA RESPUESTA</strong></p>
+                                    <p class="text-justify">ECKERD PERU S.A. procederá a notificar la respuesta a su solicitud a la dirección de correo electrónico indicado en el presente formulario. El titular de datos personales autoriza y acepta la remisión de las notificaciones
+                                        referidas a este procedimiento a dicha dirección. Las solicitudes se responderán dentro de los plazos establecidos en el Capítulo I del Título IV del Reglamento de la Ley de Protección de Datos Personales, aprobado
+                                        por Decreto Supremo No. 003-2013-JUS. Si transcurren los plazos antes indicados sin haber recibido respuesta, usted podrá considerar denegada su solicitud, quedando a salvo su derecho de iniciar un procedimiento
+                                        de tutela ante la Dirección General de Protección de Datos Personales (Ministerio de Justicia). Adicionalmente, si desea ser notificado a su domicilio deberá enviar su solicitud firmada vía carta indicando su nombre
+                                        completo, tipo de solicitud, domicilio, fecha y copia de documento de identidad, dirigida a ECKERD PERU S.A. con Domicilio fiscal en AV. DEFENSORES DEL MORRO NRO. 1277 LIMA - LIMA - CHORRILLOS. </p>
+                                </div>
+                                <!--<div class="form-group">
+                                    <label class="control-label col-sm-12">Ingrese el código de la imagen</label>
+                                    <div class="subitem col-lg-12 col-md-12 col-sm-12">
+                                        <div class="g-recaptcha" data-sitekey="6LeiZxYUAAAAALA9_gBwtyVzZv31SAkOB8BPSZ9A"></div>
+                                        <input class="form-control" type="hidden" name="action" value="jyc_form_submit">
+                                        <input type="hidden" id="jyc_form" name="jyc_form" value="70cf0b2e08" /><input type="hidden" name="_wp_http_referer" value="/arco" /> </div>
+                                </div>-->
+                                <div class="form-group">
+                                    <div class="subitem col-lg-12 col-md-12 col-sm-12">
+                                        <button type="submit" class="btn btn-default" [disabled]="!disabledEnvio">Enviar</button>
+                                        <ngx-toasta [position]="'top-right'"></ngx-toasta>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- end section  .button-section -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 footer col-sm-10 col-centered">
+                    <p>Todos los Derechos Reservados</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 copyright">
+                    <p>&copy; 2018 <a href="https://www.inkafarma.com.pe/" target="_blank">InkaFarma</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
